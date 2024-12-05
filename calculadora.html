@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="calculadora.css">
+    <title>Calculadora</title>
+</head>
+<body>
+    <h1>Calculadora</h1>
+    <div class="quadrado">
+        <input type="text" id="display"  value = "" readonly>
+        <div class="fundoTeclas">
+            <!-- Primeira linha de botões -->
+            <div>
+                <button class="btn1" onclick="" style="font-size: small;">ON/AC</button>
+                <button class="btn1" onclick="apagarNumero()" style="font-size: medium;"><=</button>
+                <button class="btn1" onclick="adicionarPontoDecimal()">.</button>
+            </div>
+
+            <!-- Segunda linha de botões -->
+            <div>
+                <button class="btn" onclick="adicionarNumero(7)">7</button>
+                <button class="btn" onclick="adicionarNumero(4)">4</button>
+                <button class="btn" onclick="adicionarNumero(1)">1</button>
+                <button class="btn" onclick="operacao('/')">÷</button>
+            </div>
+
+            <!-- Terceira linha de botões -->
+            <div>
+                <button class="btn" onclick="adicionarNumero(8)">8</button>
+                <button class="btn" onclick="adicionarNumero(5)">5</button>
+                <button class="btn" onclick="adicionarNumero(2)">2</button>
+                <button class="btn" onclick="operacao('*')">×</button>
+            </div>
+
+            <!-- Quarta linha de botões -->
+            <div>
+                <button class="btn" onclick="adicionarNumero(9)">9</button>
+                <button class="btn" onclick="adicionarNumero(6)">6</button>
+                <button class="btn" onclick="adicionarNumero(3)">3</button>
+                <button class="btn" onclick="adicionarNumero(0)">0</button>
+            </div>
+
+            <!-- Quinta linha de botões -->
+            <div>
+                <button class="btn0" onclick="calcular()">=</button>
+            </div>
+                <button class="btn5" onclick="limparDisplay()">C</button>
+                <button class="btn5" onclick="operacao('-')">-</button>
+                <button class="btn5" onclick="operacao('+')">+</button>
+            </div>
+            
+        </div>
+    </div>
+</body>
+<script src="calculadora.js"></script>
+</html>
