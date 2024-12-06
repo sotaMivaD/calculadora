@@ -7,8 +7,8 @@ function atualizarDisplay(valor) {
 }
 
 function adicionarNumero(numero) {
-    operando += numero;  // Adiciona o número ao que já existe no display
-    atualizarDisplay(operando);  // Atualiza o display
+        operando += numero;  // Adiciona o número ao que já existe no display
+        atualizarDisplay(operando);  // Atualiza o display
 }
 
 function limparDisplay() {
@@ -20,6 +20,12 @@ function limparDisplay() {
 
 // Define o operador e realiza cálculos intermediários
 function operacao(novoOperador) {
+    if (novoOperador === "-" && operando === "") {
+        operando = "-";
+        atualizarDisplay(operando);  // Atualiza o display com o operador negativo
+        return;
+    }
+
     if (operando !== "") {
         // Converte o operando atual para número e acumula no resultado
         if (resultado === 0) {
@@ -29,13 +35,17 @@ function operacao(novoOperador) {
             calcular();
         }
     }
+
     operador = novoOperador;  // Atualiza o operador
     operando = "";  // Prepara para o próximo número
-}
 
+    // Exibe o operador no display
+    atualizarDisplay(resultado + " " + operador);
+}
+//função para calcular o resultado
 function calcular() {
     if (operador && operando !== "") {
-        let segundoOperando = parseFloat(operando);  // Proximo numero
+        let segundoOperando = parseFloat(operando);
         switch (operador) {
             case "+":
                 resultado += segundoOperando;
